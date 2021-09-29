@@ -1,11 +1,10 @@
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { TransformInterceptor } from './transform.interceptor';
-import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
-  const logger = new Logger();
+  const logger = new Logger('Main App');
 
   const app = await NestFactory.create(AppModule);
 
